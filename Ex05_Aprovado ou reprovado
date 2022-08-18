@@ -1,0 +1,31 @@
+//Faça um programa para leitura de duas notas parciais de um aluno.
+//O programa deve calcular a média alcançada pelo aluno e apresentar:
+//A mensagem "APROVADO", se a média alcançada for maior ou igual a sete;
+//A mensagem "REPROVADO", se a média alcançada for menor que sete;
+//A mensagem "APROVADO COM DISTINÇÃO", se a média for igual a dez.
+
+package condicionais;
+
+import java.util.Scanner;
+
+public class EX05_AprovadoReprovado {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Digite a primeira nota do aluno: ");
+		double nota1 = entrada.nextDouble();
+		
+		System.out.println("Digite a segunda nota do aluno: ");
+		double nota2 = entrada.nextDouble();
+		
+		double media = (nota1 + nota2) / 2;
+		
+		if (media == 10) {
+			System.out.println("Sua média foi " + media + ", você foi APROVADO COM DISTINÇÃO!");
+		}else if (media < 7) {
+			System.out.println("Sua média foi " + media + ", você foi REPROVADO!");
+		}else {
+			System.out.println("Sua média foi " + media + ", você foi APROVADO!");
+		}
+		} 
+	}
