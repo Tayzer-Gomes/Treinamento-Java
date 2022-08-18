@@ -1,0 +1,38 @@
+//Faça um programa que pergunte em que turno você estuda.
+//Peça para digitar M-matutino v-vespertino ou N-noturno.
+//Imprima a mensagem "Bom dia!", "Boa tarde!", "Boa noite!" ou "Valor inválido", conforme o caso.
+
+package condicionais;
+
+import java.util.Scanner;
+
+public class Ex10_TurnoDoEstudante {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Qual turno você estuda? ");
+		System.out.println("[M] - Matutino \n[V] - Vespertino \n[N] - Noturno ");
+		
+		
+		String turno = entrada.next();
+		
+		switch (turno) {
+			case "m":
+			case "M":
+				System.out.println("Bom dia!");
+				break;
+			case "v":
+			case "V":
+				System.out.println("Boa tarde!");
+				break;
+			case "n":
+			case "N":
+				System.out.println("Boa noite!");
+				break;
+			default:
+				System.out.println("Valor inválido! Tente uma das opções do menu!");
+		}
+	}
+}
