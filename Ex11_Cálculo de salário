@@ -1,0 +1,59 @@
+//Faça um programa para cálculo de uma folha de pagamento, sabendo que os descontos são imposto de renda, que depende do salário bruto
+//conforme tabela abaixo e 3% para sindicato e que o FGTS corresponde a 11% do salário bruto, mas não é descontado(é a empresa que deposita). 
+//O salário líquido corresponde ao salário bruto menos os descontos. 
+//O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.
+//.Descontos do IR
+//.Salario bruto até 900(inclusive)-isento
+//.Salario bruto até 1500(inclusive)-desconto de 5%
+//.Salario bruto até 2500(inclusive)-desconto de 10%
+//.Salario bruto acima 2500(inclusive)-desconto de 20% - imprimir na tela as informações.
+package condicionais;
+
+import java.util.Scanner;
+
+public class Ex12_CalculoDeSalario {
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Digite o valor da sua hora trabalhada: ");
+		double valorHora = entrada.nextDouble();
+		
+		System.out.println("Digite quantas horas você trabalhou no mês: ");
+		double quantidadeHoras = entrada.nextDouble();
+		
+		double salarioBruto = valorHora * quantidadeHoras;
+		double percentual = 0;
+		
+		if (salarioBruto <= 900) {
+			System.out.println("Você está isento de impostos!");
+		}
+		else if (salarioBruto <= 1500) {
+			
+		percentual = 0.05;
+		}	
+		else if (salarioBruto <= 2500) {
+			percentual = 0.10;
+		}
+		else if (salarioBruto > 2500) {
+			percentual = 0.20;		
+		}
+		double ir = (salarioBruto * percentual);
+		double inss = (salarioBruto * 0.1);
+		double fgts = (salarioBruto * 0.11);
+		double totalDescontos = ir + inss;
+		double salarioLiquido = salarioBruto - totalDescontos;
+		
+		System.out.format("Salário bruto: R$ %.2f" , salarioBruto);
+		System.out.format("\n(-) IR: R$ %.2f" , ir); 
+		System.out.format("\n(-)INSS: R$ %.2f" , inss);
+		System.out.format("\nFGTS: R$ %.2f" , fgts);
+		System.out.format("\nTotal de descontos: R$ %.2f" , totalDescontos);
+		System.out.format("\nSalário líquido: R$ %.2f" , salarioLiquido);
+	}
+
+}
