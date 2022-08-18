@@ -1,0 +1,53 @@
+//Faça um programa que leia duas notas parciais obtidas por um aluno numa disciplina ao 
+//longo de um semestre, e calcule a sua média. A atribuição de conceitos obecese à seguinte tabela abaixo:
+//Entre 9 e 10 nota A;
+//Entre 7.5 e 9 nota B;
+//Entre 6 e 7.5 nota C;
+//Entre 4 e 6 nota D;
+//Entre 0 e 4 nota E;
+// O algorítmo deve mostrar na tela as notas, a média, e a mensagem de APROVADO se o conceito for A,B,C
+//REPROVADO se o conceito for D ou E.
+
+
+package condicionais;
+
+import java.util.Scanner;
+
+public class Ex14_CalculoDeMedia {
+
+	public static void main(String[] args) {
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.println("Digite o valor da 1° nota: ");
+		double nota1 = entrada.nextDouble();
+		
+		System.out.println("Digite o valor da 2° nota: ");
+		double nota2 = entrada.nextDouble();
+		
+		double media = (nota1 + nota2) / 2;
+		String conceito = " ";
+		
+		if (media <= 4) {
+			conceito = " E - REPROVADO";
+		}
+		else if (media >= 4 && media < 6) {
+			conceito = " D - REPROVADO";
+		}
+		else if (media >= 6 && media < 7.5) {
+			conceito = " C - APROVADO";
+		}
+		else if (media >= 7.5 && media < 9) {
+			conceito = " B - APROVADO";
+		}
+		else if(media >=9 && media <= 10){
+			conceito = " A - APROVADO";
+		}
+		
+		System.out.println("Nota 1 = " + nota1);
+		System.out.println("Nota 2 = " + nota2);
+		System.out.println("Sua média é: " + media);
+		System.out.println("Sua aproveitamento foi: " + conceito);
+		
+	}
+}
