@@ -1,0 +1,35 @@
+//Faça um programa que leia o preço de três produtos e 
+//informe qual produto você deve comprar, sabendo que a decisão
+//é sempre pelo mais barato.
+
+package condicionais;
+
+import java.util.Scanner;
+
+public class Ex08_ProdutoMaisBarato {
+
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.println("Digite o valor do primeiro produto: ");
+		double valorProduto1 = leitor.nextDouble();
+		
+		System.out.println("Digite o valor do segundo produto: ");
+		double valorProduto2 = leitor.nextDouble();
+		
+		System.out.println("Digite o valor do terceiro produto: ");
+		double valorProduto3 = leitor.nextDouble();
+		
+		if (valorProduto1 > valorProduto2 && valorProduto2 > valorProduto3) {
+			System.out.println("O produto que você deve comprar é o de preço: R$ " + valorProduto3);
+		}
+		else if (valorProduto1 > valorProduto2 && valorProduto2 < valorProduto3 ) {
+			System.out.println("O produto que você deve comprar é o de preço: R$ " + valorProduto2);
+		}
+		else {
+			System.out.println("O produto que você deve comprar é o de preço: R$ " + valorProduto1);
+		}
+	}
+
+}
